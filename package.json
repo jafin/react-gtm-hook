@@ -20,35 +20,40 @@
     "dist"
   ],
   "engines": {
-    "node": ">=12"
+    "node": ">=18"
   },
   "scripts": {
     "dev": "tsdx watch",
     "build": "tsdx build",
     "test": "tsdx test --env=jsdom",
     "test:watch": "tsdx test --env=jsdom --watch",
-    "lint": "tsdx lint src test",
+    "lint": "eslint src test",
     "prepare": "tsdx build"
   },
   "devDependencies": {
     "@babel/core": "^7.17.8",
-    "@testing-library/react": "^12.1.4",
-    "@testing-library/react-hooks": "^7.0.2",
+    "@eslint/js": "^9.10.0",
+    "@testing-library/react": "16.0.1",
+    "@testing-library/react-hooks": "8.0.1",
     "@types/react": "18.3.5",
     "@types/react-dom": "^18.3.0",
     "all-contributors-cli": "^6.20.0",
-    "babel-jest": "^27.5.1",
-    "babel-plugin-module-resolver": "^4.1.0",
-    "eslint-plugin-prettier": "3.4.1",
-    "husky": "^7.0.4",
-    "prettier": "^2.6.1",
+    "babel-jest": "29.7.0",
+    "babel-plugin-module-resolver": "5.0.2",
+    "eslint": "^9.10.0",
+    "eslint-plugin-prettier": "5.2.1",
+    "eslint-plugin-react": "^7.35.2",
+    "globals": "^15.9.0",
+    "husky": "9.1.5",
+    "prettier": "3.3.3",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-router-dom": "6.26.1",
-    "react-test-renderer": "^17.0.2",
+    "react-test-renderer": "18.3.1",
     "tsdx": "^0.14.1",
     "tslib": "^2.3.1",
-    "typescript": "^4.6.3"
+    "typescript": "5.5.4",
+    "typescript-eslint": "^8.4.0"
   },
   "peerDependencies": {
     "react": "^16.13.1 || ^17.0.0 || ^18.0.0"
