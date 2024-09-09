@@ -3,7 +3,7 @@ import { ISnippetsParams } from '../src/models/GoogleTagManager'
 
 describe('Suite of snippets functions', () => {
   describe('Suite of getDataLayerSnippet', () => {
-    let dataLayer: Object
+    let dataLayer: object
     let dataLayerName: string
 
     beforeEach(() => {
