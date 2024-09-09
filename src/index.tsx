@@ -5,8 +5,8 @@ import { initGTM, sendToGTM } from './utils/GoogleTagManager'
 
 declare global {
   interface Window {
-    dataLayer: Object | undefined
-    [key: string]: any
+    dataLayer: object | undefined
+    [key: string]: unknown
   }
 }
 
@@ -41,8 +41,8 @@ export const initialState: ISnippetsParams = {
 export const GTMContext = createContext<ISnippetsParams | undefined>(initialState)
 export const GTMContextDispatch = createContext<((data: ISendToGTM['data']) => void) | undefined>(undefined)
 
-function dataReducer(state: ISnippetsParams, data: any) {
-  sendToGTM({ data, dataLayerName: state?.dataLayerName! })
+function dataReducer(state: ISnippetsParams, action: ISendToGTM): ISnippetsParams {
+  sendToGTM({ data: action.data, dataLayerName: state.dataLayerName ?? 'dataLayer' })
   return state
 }
 

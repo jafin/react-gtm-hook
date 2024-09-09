@@ -2,7 +2,7 @@
  * The shape of the dataLayer
  */
 export type IDataLayer = {
-  dataLayer: Object | undefined
+  dataLayer: object | undefined
   dataLayerName: string
 }
 
