@@ -39,7 +39,7 @@ export const initialState: ISnippetsParams = {
  * The context
  */
 export const GTMContext = createContext<ISnippetsParams | undefined>(initialState)
-export const GTMContextDispatch = createContext<((data: ISendToGTM['data']) => void) | undefined>(undefined)
+export const GTMContextDispatch = createContext<React.Dispatch<ISendToGTM> | undefined>(undefined);
 
 function dataReducer(state: ISnippetsParams, action: ISendToGTM): ISnippetsParams {
   sendToGTM({ data: action.data, dataLayerName: state.dataLayerName ?? 'dataLayer' })
@@ -66,7 +66,7 @@ function GTMProvider({ state, children }: GTMHookProviderProps): JSX.Element {
   )
 }
 
-function useGTMDispatch() {
+function useGTMDispatch(): React.Dispatch<ISendToGTM> {
   const context = useContext(GTMContextDispatch)
   if (context === undefined) {
     throw new Error('dispatchGTMEvent must be used within a GTMProvider')

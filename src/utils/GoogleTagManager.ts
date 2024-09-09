@@ -85,8 +85,8 @@ export const initGTM = (config: ISnippetsParams): void => {
  * @param data - The data to push
  */
 export const sendToGTM = ({ dataLayerName, data }: ISendToGTM): void => {
-  if (window[dataLayerName]) {
-    window[dataLayerName].push(data)
+  if (window[dataLayerName] && Array.isArray(window[dataLayerName])) {
+    (window[dataLayerName] as object[]).push(data)
   } else {
     console.warn(`dataLayer ${dataLayerName} does not exist, has script be initialized`)
   }
